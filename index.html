@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Navigation bar</title>
+    <style>
+        /* colors -> https://coolors.co/e54b4b-ebebd3-464655-e4b363-e8e9eb */
+
+        @import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
+
+        body {
+            background: #F0F8EA;
+            font-family: 'Quicksand', sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: #E54B4B;
+            color: #EBEBD3;
+            padding: 1em 0;
+            position: relative;
+        }
+
+        header::after {
+            content: '';
+            clear: both;
+            display: block;
+        }
+
+        .logo {
+            float: left;
+            font-size: 1rem;
+            margin: 0;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .logo span {
+            font-weight: 400;
+        }
+
+        .site-nav {
+            position: absolute;
+            top: 100%;
+            right: 0%;
+            background: #464655;
+            clip-path: circle(0px at top right);
+            transition: clip-path ease-in-out 700ms;
+            /*   display: none; */
+        }
+
+        .site-nav--open {
+            clip-path: circle(250% at top right);
+            /*   display: block; */
+        }
+
+        .site-nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .site-nav li {
+            border-bottom: 1px solid #575766;
+        }
+
+        .site-nav li:last-child {
+            border-bottom: none;
+        }
+
+        .site-nav a {
+            color: #EBEBD3;
+            display: block;
+            padding: 2em 4em 2em 1.5em;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+
+        .site-nav a:hover,
+        .site-nav a:focus {
+            background: #E4B363;
+            color: #464655;
+        }
+
+        .site-nav--icon {
+            display: inline-block;
+            font-size: 1.5em;
+            margin-right: 1em;
+            width: 1.1em;
+            text-align: right;
+            color: rgba(255, 255, 255, .4);
+        }
+
+        .menu-toggle {
+            padding: 1em;
+            position: absolute;
+            top: .5em;
+            right: .5em;
+            cursor: pointer;
+        }
+
+        .hamburger,
+        .hamburger::before,
+        .hamburger::after {
+            content: '';
+            display: block;
+            background: #EBEBD3;
+            height: 3px;
+            width: 1.75em;
+            border-radius: 3px;
+            transition: all ease-in-out 500ms;
+        }
+
+        .hamburger::before {
+            transform: translateY(-6px);
+        }
+
+        .hamburger::after {
+            transform: translateY(3px);
+        }
+
+        .open .hamburger {
+            transform: rotate(45deg);
+        }
+
+        .open .hamburger::before {
+            opacity: 0;
+        }
+
+        .open .hamburger::after {
+            transform: translateY(-3px) rotate(-90deg);
+        }
+
+        @media (min-width: 700px) {
+
+            .menu-toggle {
+                display: none;
+            }
+
+            .site-nav {
+                height: auto;
+                position: relative;
+                background: transparent;
+                float: right;
+                clip-path: initial;
+            }
+
+            .site-nav li {
+                display: inline-block;
+                border: none;
+            }
+
+            .site-nav a {
+                padding: 0;
+                margin-left: 2.5em;
+            }
+
+            .site-nav a:hover,
+            .site-nav a:focus {
+                background: transparent;
+            }
+
+            .site-nav--icon {
+                display: none;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+
+            <h1 class="logo">Generico<span>Logo</span></h1>
+
+            <nav class="site-nav">
+                <ul>
+                    <li><a href=""><i class="fa fa-home site-nav--icon"></i>Home</a></li>
+                    <li><a href=""><i class="fa fa-info site-nav--icon"></i>About</a></li>
+                    <li><a href=""><i class="fa fa-pencil site-nav--icon"></i>Blog</a></li>
+                    <li><a href=""><i class="fa fa-usd site-nav--icon"></i>Pricing</a></li>
+                    <li><a href=""><i class="fa fa-envelope site-nav--icon"></i>Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="menu-toggle">
+                <div class="hamburger"></div>
+            </div>
+
+        </div>
+
+    </header>
+    <div class="">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi voluptatem ea cumque explicabo
+        adipisci alias, laudantium quaerat soluta, eaque consequatur sunt culpa consequuntur eligendi atque laborum
+        similique dolore, qui dolorum. Reprehenderit tempora iste, fugiat veritatis excepturi accusamus dignissimos
+        fugit ipsum, aliquam quae nulla exercitationem necessitatibus! Omnis et dolorem sit laboriosam, fugiat
+        dignissimos quidem ea id vitae totam! Tempore ad maxime provident quia eos commodi quas architecto enim rerum
+        neque, vitae vero suscipit ipsum maiores ab? Facere molestias odio voluptatum debitis hic sunt est. Voluptatem,
+        similique modi, nostrum accusantium molestias debitis ducimus unde, ut blanditiis architecto at? Quis facere
+        deleniti porro consectetur voluptatum, numquam ut saepe delectus similique id esse. Nam deserunt necessitatibus
+        consequuntur a obcaecati magnam laudantium minima itaque earum quae, possimus reiciendis culpa fugit corporis.
+        Amet voluptatum illo, deserunt, dolorem quia ducimus unde maxime similique aperiam voluptate recusandae! Quaerat
+        nobis, mollitia dolor illum architecto fugiat, tenetur magnam optio tempora totam quae aspernatur itaque eos id
+        dignissimos debitis voluptate delectus asperiores! Neque ad voluptate molestias nemo eius unde ratione dolorem
+        mollitia earum repellat, illo cumque atque quo. Maiores doloribus magni culpa nobis maxime ducimus illum fuga
+        labore exercitationem, dolore quae dolores ea cum iusto vel consequatur laborum sunt accusamus sed in
+        repellendus quod corrupti! Dolore facilis nisi sint possimus corrupti recusandae voluptas dicta illum, quod,
+        ducimus culpa placeat deleniti excepturi aliquam voluptatibus, non temporibus dolorem dolorum. Pariatur nesciunt
+        nobis, odit quos illo blanditiis, quas laboriosam, aliquid nam voluptatibus quae voluptatum dolores accusamus!
+        Modi fugit a, excepturi harum beatae nesciunt numquam voluptate, neque fugiat quam omnis repellat pariatur
+        exercitationem veritatis! Atque autem expedita placeat sed rerum ipsam necessitatibus, id vero nihil, unde
+        sequi, illum nulla recusandae eaque fugiat. Deleniti unde eligendi debitis, ut error incidunt amet reprehenderit
+        deserunt quia ex blanditiis veniam vero sapiente ratione maxime expedita cum accusantium consequuntur
+        repudiandae voluptatibus libero quisquam sed. Maxime ab necessitatibus non illum. Ratione possimus, rerum
+        maiores reprehenderit consectetur, exercitationem consequatur totam voluptatem aliquid adipisci, nemo non in.
+        In, repudiandae sed eligendi harum autem veniam necessitatibus deleniti reiciendis iusto enim suscipit labore id
+        ex dolorum officiis officia voluptas corrupti culpa dolor nostrum tenetur. Vitae mollitia, dolorum laudantium
+        nesciunt magnam iure nisi quod in tempora quisquam? Quasi dolorum distinctio architecto consectetur accusamus,
+        dolore non saepe obcaecati et quis ipsam, odio iste recusandae hic esse rem quos. Velit blanditiis facere, ex
+        tempora nihil magnam amet quod, atque at libero repellendus cum incidunt voluptatem itaque natus rerum iusto
+        architecto facilis aliquam sapiente cumque provident sint nam! Sunt a laudantium reiciendis odio vero nostrum,
+        sit dolore iste, distinctio ab similique placeat, quaerat unde in totam natus dolores fuga est aspernatur atque
+        voluptate officia. Et repudiandae nostrum pariatur, corporis dolorem rerum minima corrupti numquam ea
+        praesentium nemo, enim mollitia consectetur, officia accusantium quo ipsum obcaecati! Sint nam vitae alias vel
+        asperiores voluptatum deleniti? Voluptate ducimus rem neque quo nam beatae, eum quas. Ducimus ipsa tenetur saepe
+        itaque consequuntur eaque architecto laboriosam doloribus accusantium. Nam corporis, fugit quidem dignissimos
+        modi tenetur suscipit, reprehenderit itaque assumenda aspernatur voluptates fuga hic totam amet repellat illum
+        laboriosam, minima repellendus corrupti? Animi ex cum quisquam inventore fugiat qui amet quod aspernatur
+        mollitia, ut beatae architecto voluptate rem molestiae. Facere, ex ducimus voluptatibus minus consequuntur
+        provident totam dignissimos a incidunt distinctio explicabo optio. Perspiciatis iure id esse dolor placeat
+        voluptatum odio, non laborum doloribus dignissimos quae earum dolorem laudantium unde natus voluptate doloremque
+        aliquid et exercitationem. Praesentium porro dolores labore dicta. Sit ipsam harum culpa perferendis quam
+        cupiditate sed possimus quo voluptates illo quos in enim earum sapiente, commodi velit quis voluptatibus
+        deleniti, accusantium nihil cumque? Voluptates excepturi sed pariatur quaerat corrupti consequatur commodi
+        perferendis!</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+        $('.menu-toggle').click(function () {
+
+            $('.site-nav').toggleClass('site-nav--open', 500);
+            $(this).toggleClass('open');
+
+        })
+    </script>
+</body>
+
+</html>
